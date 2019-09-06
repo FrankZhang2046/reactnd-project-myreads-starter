@@ -26,6 +26,12 @@ export default class MainPage extends Component {
     BooksAPI.getAll().then(result => this.setState({ books: result }));      
   }
 
+  reshelf=(bookID, shelf)=>{
+    const bookToReshelf = this.state.books.find(item=>item.id === bookID);
+    BooksAPI.update(bookToReshelf, shelf).then(event=>console.log(event));
+    this.loadData();
+  }
+
   componentDidUpdate(prevProp, prevState) {
     if (this.state.books !== prevState.books) {
       const { books } = this.state;
@@ -50,9 +56,9 @@ export default class MainPage extends Component {
                 key={shelf.key}
                 shelfName={shelf.value}
                 stack={this.state[`${shelf.key}`]}
+                reshelf={this.reshelf}
               />
             ))}
-            {console.log(this.state)}
           </div>
         </div>
         <Link to='/search'>
