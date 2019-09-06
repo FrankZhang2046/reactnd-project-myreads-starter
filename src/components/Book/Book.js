@@ -3,7 +3,7 @@ import BookshelfChanger from "../BookshelfChanger/BookshelfChanger";
 
 const Book = props => {
   const {title, authors, imageLinks, shelf, id, reshelf} = props;
-  
+
   return (
     <div className="book">
       <div className="book-top">
@@ -12,8 +12,7 @@ const Book = props => {
           style={{
             width: 128,
             height: 193,
-            backgroundImage:
-              `url(${imageLinks.thumbnail})`
+            backgroundImage: `url(${imageLinks.thumbnail})`
           }}
         ></div>
         <BookshelfChanger {...props} selectedValue={shelf} reshelf={reshelf}/>
