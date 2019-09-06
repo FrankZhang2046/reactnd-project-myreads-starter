@@ -11,7 +11,7 @@ const Bookshelf = props => {
       <h2 className="bookshelf-title">{shelfName}</h2>
       <div className="bookshelf-books">
         <ol className="books-grid">
-          {stack.map(book=><li><Book {...book}/></li>)}
+          {stack.map(book=><li><Book {...book} shelf={book.shelf}/></li>)}
         </ol>
       </div>
     </div>

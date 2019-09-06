@@ -3,7 +3,7 @@ import "./Book.scss";
 import BookshelfChanger from "../BookshelfChanger/BookshelfChanger";
 
 const Book = props => {
-  const {title, authors, imageLinks} = props;
+  const {title, authors, imageLinks, shelf} = props;
   
   return (
     <div className="book">
@@ -17,7 +17,7 @@ const Book = props => {
               `url(${imageLinks.thumbnail})`
           }}
         ></div>
-        <BookshelfChanger />
+        <BookshelfChanger selectedValue={shelf}/>
       </div>
       <div className="book-title">{title}</div>
       <div className="book-authors">{(authors && (authors.length!==0)) && authors.map(author=>author)}</div>
