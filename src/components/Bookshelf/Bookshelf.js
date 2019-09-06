@@ -3,14 +3,15 @@ import "./Bookshelf.scss";
 import Book from '../Book/Book';
 
 const Bookshelf = props => {
+  const {shelfName, stack} = props;
+
   return (
     <div className="bookshelf">
-      <h2 className="bookshelf-title">Currently Reading</h2>
+      {console.log(props.stack)}
+      <h2 className="bookshelf-title">{shelfName}</h2>
       <div className="bookshelf-books">
         <ol className="books-grid">
-          <li>
-            <Book />
-          </li>
+          {stack.map(book=><li><Book {...book}/></li>)}
         </ol>
       </div>
     </div>
