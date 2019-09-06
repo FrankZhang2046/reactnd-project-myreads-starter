@@ -1,11 +1,11 @@
 import React from "react";
 
 const BookshelfChanger = props => {
-  const {title, id, reshelf} = props;
+  const {title, id, reshelf, shelf} = props;
 
   return (
     <div className="book-shelf-changer">
-      <select onChange={(event)=>{reshelf(id, event.target.value)}}>
+      <select  value={shelf} onChange={(event)=>{reshelf(id, event.target.value)}}>
         <option value="move" disabled>
           Move to...
         </option>

@@ -10,7 +10,7 @@ const Bookshelf = props => {
       <div className="bookshelf-books">
         <ol className="books-grid">
           {stack.map(book => (
-            <li>
+            <li key={book.id}>
               <Book {...book} shelf={book.shelf} reshelf={reshelf} />
             </li>
           ))}

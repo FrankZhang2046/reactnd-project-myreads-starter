@@ -19,7 +19,7 @@ export default class MainPage extends Component {
   };
 
   componentDidMount() {
-    this.loadData()
+    this.loadData();
   }
 
   loadData=()=>{
@@ -28,8 +28,7 @@ export default class MainPage extends Component {
 
   reshelf=(bookID, shelf)=>{
     const bookToReshelf = this.state.books.find(item=>item.id === bookID);
-    BooksAPI.update(bookToReshelf, shelf).then(event=>console.log(event));
-    this.loadData();
+    BooksAPI.update(bookToReshelf, shelf).then(event=>{this.loadData()});
   }
 
   componentDidUpdate(prevProp, prevState) {
