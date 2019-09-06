@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import "./MainPage.scss";
 import * as BooksAPI from "../../BooksAPI.js";
 import TitleBlock from "../../components/TitleBlock/TitleBlock";
 import Bookshelf from "../../components/Bookshelf/Bookshelf";

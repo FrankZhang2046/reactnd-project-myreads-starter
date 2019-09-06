@@ -1,5 +1,4 @@
 import React from "react";
-import "./SearchPage.scss";
 import { Link } from "react-router-dom";
 
 export default class SearchPage extends React.Component {

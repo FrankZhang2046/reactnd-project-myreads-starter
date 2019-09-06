@@ -1,5 +1,4 @@
 import React from "react";
-import "./BookshelfChanger.scss";
 
 const BookshelfChanger = props => {
   return (

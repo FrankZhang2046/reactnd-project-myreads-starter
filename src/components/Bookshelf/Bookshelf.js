@@ -1,5 +1,4 @@
 import React from "react";
-import "./Bookshelf.scss";
 import Book from '../Book/Book';
 
 const Bookshelf = props => {
