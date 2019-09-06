@@ -18,11 +18,17 @@ export default class SearchPage extends React.Component {
     BooksAPI.search(this.state.queryInput).then(result=>this.setState({result}))
   }
 
+  reshelf=(bookID, shelf)=>{
+    const bookToReshelf = this.state.result.find(item=>item.id === bookID);
+    const filteredSearchResult = this.state.result.filter(book=>book.id !== bookID);
+    BooksAPI.update(bookToReshelf, shelf).then(()=>this.setState({result: filteredSearchResult}));
+  }
+
   render() {
     return (
       <div className="search-books">
         <SearchBar queryInput={this.state.queryInput} handleQueryInput={this.handleQueryInput} performSearch={this.performSearch}/>
-        <SearchResult result={this.state.result}/>
+        <SearchResult result={this.state.result} reshelf={this.reshelf}/>
       </div>
     );
   }
