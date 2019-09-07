@@ -20,8 +20,8 @@ export default class SearchPage extends React.Component {
 
   reshelf=(bookID, shelf)=>{
     const bookToReshelf = this.state.result.find(item=>item.id === bookID);
-    const filteredSearchResult = this.state.result.filter(book=>book.id !== bookID);
-    BooksAPI.update(bookToReshelf, shelf).then(()=>this.setState({result: filteredSearchResult}));
+    // const filteredSearchResult = this.state.result.filter(book=>book.id !== bookID);
+    BooksAPI.update(bookToReshelf, shelf).then();
   }
 
   render() {

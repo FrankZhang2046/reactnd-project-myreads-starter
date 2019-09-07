@@ -60,7 +60,10 @@ export default class MainPage extends Component {
             ))}
           </div>
         </div>
-        <Link to='/search'>
+        <Link to={{
+          pathname: '/search',
+          state: {inLibrary: this.state.books}
+        }}>
             <AddButton />
         </Link>
       </div>
