@@ -1,7 +1,7 @@
 import React from "react";
 
 const BookshelfChanger = props => {
-  const {title, id, reshelf, shelf} = props;
+  const {id, reshelf, shelf} = props;
 
   return (
     <div className="book-shelf-changer">

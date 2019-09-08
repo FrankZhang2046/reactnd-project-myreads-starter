@@ -2,7 +2,7 @@ import React from 'react';
 import {Link} from 'react-router-dom';
 
 const SearchBar=props=>{
-    const {queryInput, handleQueryInput, performSearch} = props
+    const {queryInput, handleQueryInput} = props
 
     return (
         <div className="search-books-bar">

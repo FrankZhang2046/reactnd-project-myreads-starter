@@ -15,7 +15,7 @@ const Book = props => {
             backgroundImage: `url(${imageLinks.thumbnail})`
           }}
         ></div>
-        <BookshelfChanger {...props} selectedValue={shelf} reshelf={reshelf}/>
+        <BookshelfChanger {...props} id={id} selectedValue={shelf} reshelf={reshelf}/>
       </div>
       <div className="book-title">{title}</div>
       <div className="book-authors">{(authors && (authors.length!==0)) && authors.map(author=>author)}</div>

@@ -76,7 +76,6 @@ export default class SearchPage extends React.Component {
         <SearchBar
           queryInput={this.state.queryInput}
           handleQueryInput={this.handleQueryInput}
-          performSearch={this.performSearch}
         />
         <SearchResult queryInput={this.state.queryInput} result={this.state.result} reshelf={this.reshelf} />
       </div>
