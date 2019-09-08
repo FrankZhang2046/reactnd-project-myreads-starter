@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from 'prop-types';
 
 const BookshelfChanger = props => {
   const {id, reshelf, shelf} = props;
@@ -17,5 +18,11 @@ const BookshelfChanger = props => {
     </div>
   );
 };
+
+BookshelfChanger.propTypes={
+  id: PropTypes.string.isRequired, 
+  reshelf: PropTypes.func.isRequired, 
+  shelf: PropTypes.string
+}
 
 export default BookshelfChanger;

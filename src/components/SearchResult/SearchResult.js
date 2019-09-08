@@ -1,5 +1,6 @@
 import React from 'react';
 import Book from '../Book/Book';
+import PropTypes from 'prop-types';
 
 const SearchResult = props => {
     const { result, reshelf, queryInput} = props;
@@ -11,6 +12,12 @@ const SearchResult = props => {
           </ol>
         </div>
     )
+}
+
+SearchResult.propTypes={
+    result: PropTypes.array.isRequired, 
+    reshelf: PropTypes.func.isRequired, 
+    queryInput: PropTypes.string
 }
 
 export default SearchResult;

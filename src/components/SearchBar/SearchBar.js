@@ -1,5 +1,6 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
+import PropTypes from 'prop-types';
 
 const SearchBar=props=>{
     const {queryInput, handleQueryInput} = props
@@ -18,6 +19,11 @@ const SearchBar=props=>{
           </div>
         </div>
     )
+}
+
+SearchBar.propTypes = {
+  queryInput: PropTypes.string.isRequired, 
+  handleQueryInput: PropTypes.func.isRequired
 }
 
 export default SearchBar;

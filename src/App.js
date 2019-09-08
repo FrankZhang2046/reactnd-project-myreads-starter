@@ -4,7 +4,7 @@ import {Route, BrowserRouter} from 'react-router-dom';
 import MainPage from './pages/MainPage/MainPage';
 import SearchPage from './pages/SearchPage/SearchPage';
 
-const BooksApp =(props)=> {
+const BooksApp =()=> {
     return (
       <BrowserRouter className="app">
         <Route exact path="/" component={MainPage} />

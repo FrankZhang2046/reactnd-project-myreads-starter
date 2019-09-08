@@ -1,6 +1,6 @@
 import React from 'react';
 
-const AddButton=props=>{
+const AddButton=()=>{
     return(
         <div className="open-search">
             <button onClick={() => {}}>Add a book</button>
