@@ -7,7 +7,17 @@ import SearchResult from "../../components/SearchResult/SearchResult";
 export default class SearchPage extends React.Component {
   state={
     queryInput: '',
-    result: []
+    result: [],
+    inLibrary: {}
+  }
+
+  componentDidMount(){
+    this.setState({inLibrary:this.props.location.state.inLibrary})
+  }
+
+  flattenResponse=(response)=>{
+    const flattenedDictionary = {};
+    
   }
 
   handleQueryInput=(event)=>{
@@ -15,13 +25,15 @@ export default class SearchPage extends React.Component {
   }
 
   performSearch=()=>{
-    BooksAPI.search(this.state.queryInput).then(result=>this.setState({result}))
+    BooksAPI.search(this.state.queryInput).then(result=>{
+      this.setState({result})
+    })
   }
 
   reshelf=(bookID, shelf)=>{
     const bookToReshelf = this.state.result.find(item=>item.id === bookID);
     // const filteredSearchResult = this.state.result.filter(book=>book.id !== bookID);
-    BooksAPI.update(bookToReshelf, shelf).then();
+    BooksAPI.update(bookToReshelf, shelf).then((result)=>{console.log(result)});
   }
 
   render() {

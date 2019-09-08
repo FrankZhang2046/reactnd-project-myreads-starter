@@ -22,6 +22,14 @@ export default class MainPage extends Component {
     this.loadData();
   }
 
+  compileInLibraryReport=()=>{
+    const inLibrary={};
+    this.state.books.map(
+      (book)=>inLibrary[`${book.id}`] = book.shelf
+    );
+    return inLibrary;
+  }
+
   loadData=()=>{
     BooksAPI.getAll().then(result => this.setState({ books: result }));      
   }
@@ -47,7 +55,7 @@ export default class MainPage extends Component {
   render() {
     return (
       <div className="list-books">
-        <TitleBlock />
+        <TitleBlock onClick={this.compileInLibraryReport}/>
         <div className="list-books-content">
           <div>
             {this.state.shelves.map(shelf => (
@@ -61,8 +69,8 @@ export default class MainPage extends Component {
           </div>
         </div>
         <Link to={{
-          pathname: '/search',
-          state: {inLibrary: this.state.books}
+          pathname:'/search',
+          state: {inLibrary: this.compileInLibraryReport()}
         }}>
             <AddButton />
         </Link>
