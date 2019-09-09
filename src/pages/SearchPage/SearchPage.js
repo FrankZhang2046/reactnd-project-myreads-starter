@@ -30,7 +30,7 @@ export default class SearchPage extends React.Component {
     //this method handles the input field value change 
       this.setState({ queryInput: event.target.value });
       if(this.state.queryInput!==''){
-        this.performSearch();
+        this.performSearch(event.target.value);
       }
       else if(this.state.queryInput===''){
         this.setState({result:[]})
@@ -59,8 +59,8 @@ export default class SearchPage extends React.Component {
     this.setState({result: newResult})
   }
 
-  performSearch = () => {
-    BooksAPI.search(this.state.queryInput).then(result => {
+  performSearch = (queryString) => {
+    BooksAPI.search(queryString).then(result => {
       this.checkLibrary(result);
     });
   };
